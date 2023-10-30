@@ -10,7 +10,7 @@ function Footer(){
                 <h6>Doormat Navigation</h6>
                 <nav>
                     <ul>
-                        <li><a key="home-section" href="home">Home</a></li>
+                        <li><a key="home-section" href="/">Home</a></li>
                         <li><a key="about-section" href="about">About</a></li>
                         <li><a key="menu-section" href="menu">Menu</a></li>
                         <li><a key="reservations-section" href="reservations">Reservations</a></li>
@@ -26,17 +26,17 @@ function Footer(){
                         <li>Paradise City</li>
                         <li>3210</li>
                         <li>(012) 345 3789</li>
-                        <li>hello@littlelemon.com</li>
+                        <li><a href = "mailto:hello@littlelemon.com">hello@littlelemon.com</a></li>
                     </ul>
 
             </span>
             <span>
                 <h6>Social Media Links</h6>
                 <ul>
-                    <li><a href="Facebook">Facebook</a></li>
-                    <li><a href="Instagram">Instagram</a></li>
-                    <li><a href="X">X</a></li>
-                    <li><a href="Threads">Threads</a></li>
+                    <li><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://twitter.com/">X</a></li>
+                    <li><a href="https://www.threads.net/">Threads</a></li>
                 </ul>
             </span>
         </footer>

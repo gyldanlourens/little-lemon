@@ -25,7 +25,7 @@ function Reservations() {
         <form>
             <h2>Reserve a table</h2>
             <fieldset>
-                <label htmlFor="diners">Diners: {diners}</label>
+                <label htmlFor="diners">Diners - {diners}</label>
                 <input id="diners" type="range" min="1" max="100" value={diners} onChange={(e) => setDiners(e.target.value)}/>
                 <p><i>Please note that we have a maximum capacity of 100 diners.</i></p>
                 <label htmlFor="date">Date</label>
@@ -40,6 +40,7 @@ function Reservations() {
                     <option value="graduation">Graduation</option>
                     <option value="other">Other</option>
                 </select><br/>
+                <section id="section">
                 <label htmlFor="section">Section</label><br/>
                     <input type="radio" id="non-smoking" name="section" value="Non-smoking"/>
                     <label for="non-smoking">Non-smoking</label><br/>
@@ -47,6 +48,7 @@ function Reservations() {
                     <label for="smoking">Smoking</label><br/>
                     <input type="radio" id="outside" name="section" value="Outside" />
                     <label for="outside">Outside</label><br/>
+                </section>
                 <label htmlFor="comments">Comments / Special Requests</label><br/>
                 <textarea />
                 <section>

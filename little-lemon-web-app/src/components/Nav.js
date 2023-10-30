@@ -2,7 +2,11 @@ import "../App.css"
 import logo from "../images/logo.svg"
 import Main from "./Main"
 import {Routes, Route, Link} from "react-router-dom"
+import About from "./About"
+import OrderOnline from "./OrderOnline"
 import  Reservations from "./Reservations"
+import  Login from "./Login"
+import Menu from "./Menu"
 
 function Nav(){
     return (
@@ -13,15 +17,19 @@ function Nav(){
            <img src={logo} alt="logo"/>
         </header>
         <Link to="/">Home</Link>
-        <Link to="/">About</Link>
-        <Link to="/">Menu</Link>
+        <Link to="/about">About</Link>
+        <Link to="/menu">Menu</Link>
         <Link to="/reservations">Reservations</Link>
-        <Link to="/">Order Online</Link>
-        <Link to="/">Login</Link>
+        <Link to="/order-online">Order Online</Link>
+        <Link to="/login">Login</Link>
     </nav>
     <Routes>
         <Route path="/" element={<Main/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/menu" element={<Menu/>}/>
+        <Route path="/order-online" element={<OrderOnline/>}/>
         <Route path="/reservations" element={<Reservations/>}/>
+        <Route path="/login" element={<Login/>}/>
     </Routes>
     </div>
     )
