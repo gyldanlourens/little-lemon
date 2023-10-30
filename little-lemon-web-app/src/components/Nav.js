@@ -1,15 +1,29 @@
+import "../App.css"
+import logo from "../images/logo.svg"
+import Main from "./Main"
+import {Routes, Route, Link} from "react-router-dom"
+import  Reservations from "./Reservations"
+
 function Nav(){
     return (
-        <nav>
-            <ul>
-                <li><a key="home-section" href="home">Home</a></li>
-                <li><a key="about-section" href="about">About</a></li>
-                <li><a key="menu-section" href="menu">Menu</a></li>
-                <li><a key="reservations-section" href="reservations">Reservations</a></li>
-                <li><a key="order-online-section" href="order-online">Order Online</a></li>
-                <li><a key="login-section" href="login">Login</a></li>
-            </ul>
-        </nav>
+    <div>
+
+    <nav className="nav">
+        <header className="header">
+           <img src={logo} alt="logo"/>
+        </header>
+        <Link to="/">Home</Link>
+        <Link to="/">About</Link>
+        <Link to="/">Menu</Link>
+        <Link to="/reservations">Reservations</Link>
+        <Link to="/">Order Online</Link>
+        <Link to="/">Login</Link>
+    </nav>
+    <Routes>
+        <Route path="/" element={<Main/>}/>
+        <Route path="/reservations" element={<Reservations/>}/>
+    </Routes>
+    </div>
     )
 }
 
