@@ -3,8 +3,25 @@ import { RadioGroup, RadioOption } from "./Radio";
 import { useReducer } from "react";
 
 
+const updateTimesReducer = (availableTimes, action) => {
+    switch (action.type){
+        case "update_times": {
+            return [...availableTimes]
+        }
+    }
+}
+
 
 const ReservationForm = () => {
+
+    const InitialTimes = [
+        "17:00",
+        "18:00",
+        "19:00",
+        "20:00",
+        "21:00",
+        "22:00",
+    ]
 
     const [date, setDate] = useState(new Date())
     const [guests, setGuests] = useState(1)
@@ -14,7 +31,8 @@ const ReservationForm = () => {
     const [email, setEmail] = useState("")
     const [selected, setSelected] = useState("");
     const [time, setTime] = useState ("17:00")
-    const [availableTimes, setAvailableTimes] = useState(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"])
+    //const [availableTimes, setAvailableTimes] = useState(InitialTimes)
+    const [availableTimes, dispatch] = useReducer(updateTimesReducer , InitialTimes)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -24,6 +42,8 @@ const ReservationForm = () => {
     const handleDateChange = (e) => {
         setDate(e.target.value)
         const dateSelected = e.target.value
+        // setAvailableTimes(availableTimes)
+        dispatch({type: "update_times", selectedDate: {dateSelected}})
 
     }
 
