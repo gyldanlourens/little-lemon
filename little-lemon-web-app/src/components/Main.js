@@ -2,8 +2,13 @@ import restaurantfood from "../images/restaurantfood.jpg"
 import marioAndAdrianA from "../images/mario-and-adrian-a.jpg"
 import marioAndAdrianB from "../images/mario-and-adrian-b.jpg"
 import placeholder from "../images/placeholder.png"
+import  Reservations from "./Reservations"
 import Specials from "./Specials"
 import Testimonials from "./Testimonials"
+import {Routes, Route, Link} from "react-router-dom"
+import { useReducer, useState } from "react"
+import ReservationForm from './ReservationForm';
+
 
 function Main(){
     return (
@@ -13,7 +18,10 @@ function Main(){
                 <h1>Little Lemon</h1>
                 <h2>Chicago</h2>
                 <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                <button href="reservations">Reserve a table</button>
+                <button><Link to="/reservations">Reserve a table</Link></button>
+                <Routes>
+                    <Route path="/reservations" element={<Reservations/>}/>
+                </Routes>
             </span>
             <span>
                 <img src={restaurantfood} alt="Restaurant Food" id="restaurantfood" className="landing-image"/>

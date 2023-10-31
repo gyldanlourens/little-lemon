@@ -211,6 +211,7 @@ div {
 
 .footer a {
   color: #EDEFEE;
+  line-height: 2;
 }
 
 .footer a:hover {
@@ -278,12 +279,6 @@ p {
   padding: 1ch;
 }
 
-form {
-  padding-left: 15vw;
-  padding-right: 15vw;
-
-}
-
 fieldset {
   padding-top: 2ch;
   padding-bottom: 2ch;
@@ -292,7 +287,6 @@ fieldset {
 
 label{
   padding: 1ch;
-  ;
 }
 
 #section {
@@ -301,6 +295,8 @@ label{
 
 
 input[type="radio"] {
+  margin-top: 25px;
+  margin-bottom: 0px;
   width: 10px;
   -webkit-appearance: none;
   background-color: #EDEFEE;
@@ -323,6 +319,7 @@ input {
   padding: 1ch;
   width: 220px;
   margin-top: 2ch;
+  margin-bottom: 2ch;
   color: #EDEFEE;
   background-color: #495E57;
   border: none;
@@ -345,14 +342,15 @@ select {
 
 textarea {
   margin: 1ch;
-  width: 225px;
-  min-width: 225px;
-  max-width: 225px;
+  width: 220px;
+  min-width: 220px;
+  max-width: 60vw;
   min-height: 70px;
   color: #EDEFEE;
   background-color: #495E57;
   border: none;
   border-radius: 16px;
+  padding: 1.5ch;
 
 }
 
@@ -387,5 +385,18 @@ fieldset button {
 
 #owners-photo-b {
   margin-bottom: 5ch;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 10vw));
+  justify-content: space-between;
+
+}
+
+.reservations {
+  max-width: 70vw;
+  padding-left: 15vw;
+  padding-right: 15vw;
 }
 
