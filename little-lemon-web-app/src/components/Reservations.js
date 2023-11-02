@@ -1,8 +1,48 @@
 import restaurant from "../images/restaurant.jpg"
 import ReservationForm from "./ReservationForm";
-import Main from "./Main";
+import { useReducer, useEffect } from "react";
+import { types } from "./types";
+import { fetchAPI } from "../BookingsAPI";
+import { useNavigate } from "react-router-dom";
+import { submitAPI } from "../BookingsAPI";
 
-function Reservations() {
+
+
+/*export const updateTimesReducer = (availableTimes, action) => {
+    switch(action.type){
+        case types.update_times:
+            return action.payload;
+        default:
+            return availableTimes
+        }
+}*/
+
+
+export const updateTimesReducer = (availableTimes, action) => {
+    switch(action.type){
+        case types.update_times:
+            return fetchAPI(action.payload)
+        default:
+            return availableTimes
+        }
+}
+
+
+export function Reservations() {
+
+
+    const initialTimes = fetchAPI(new Date())
+
+    const [availableTimes, dispatch] = useReducer(updateTimesReducer , initialTimes)
+
+    const handleDateChange = (dateSelected) => {
+        dispatch({type: types.update_times, payload: dateSelected})
+
+    }
+
+
+
+
     return (
     <main>
         <section className="landing">
@@ -20,10 +60,8 @@ function Reservations() {
         </section >
         <section className="reservations">
             <h2>Reserve a table</h2>
-            <ReservationForm/>
+            <ReservationForm availableTimes={availableTimes} handleDateChangeUpdate={handleDateChange} />
         </section>
     </main>
     )
 }
-
-export default Reservations;

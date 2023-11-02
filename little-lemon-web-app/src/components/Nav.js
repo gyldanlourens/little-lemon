@@ -4,9 +4,10 @@ import Main from "./Main"
 import {Routes, Route, Link} from "react-router-dom"
 import About from "./About"
 import OrderOnline from "./OrderOnline"
-import  Reservations from "./Reservations"
+import  {Reservations} from "./Reservations"
 import  Login from "./Login"
 import Menu from "./Menu"
+import ConfirmedBooking from "./ConfirmedBooking"
 
 function Nav(){
     return (
@@ -29,6 +30,7 @@ function Nav(){
         <Route path="/menu" element={<Menu/>}/>
         <Route path="/order-online" element={<OrderOnline/>}/>
         <Route path="/reservations" element={<Reservations/>}/>
+        <Route path="/bookingsconfirmation" element={<ConfirmedBooking/>}/>
         <Route path="/login" element={<Login/>}/>
     </Routes>
     </div>

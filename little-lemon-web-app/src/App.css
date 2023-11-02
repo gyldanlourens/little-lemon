@@ -298,20 +298,13 @@ input[type="radio"] {
   margin-top: 25px;
   margin-bottom: 0px;
   width: 10px;
-  -webkit-appearance: none;
+  appearance: none;
   background-color: #EDEFEE;
 }
 
 input[type="radio"]:checked {
   width: 10px;
   background-color:#495E57;
-}
-
-input[type="range"] {
-  width: 220px;
-  -webkit-appearance: none;
-  background-color: #495E57;
-  accent-color: #EDEFEE;
 }
 
 input {
@@ -395,8 +388,21 @@ fieldset {
 }
 
 .reservations {
-  max-width: 70vw;
   padding-left: 15vw;
   padding-right: 15vw;
 }
 
+#available-times {
+  padding: 1ch;
+}
+
+
+#available-times li{
+  display: flex;
+  justify-content: center;
+  width: 220px;
+  padding: 1ch;
+  background-color: #90EE90;
+  border-radius: 16px;
+  margin-bottom: 1ch;
+}

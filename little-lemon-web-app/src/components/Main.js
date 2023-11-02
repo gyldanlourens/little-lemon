@@ -1,16 +1,18 @@
 import restaurantfood from "../images/restaurantfood.jpg"
 import marioAndAdrianA from "../images/mario-and-adrian-a.jpg"
 import marioAndAdrianB from "../images/mario-and-adrian-b.jpg"
-import placeholder from "../images/placeholder.png"
-import  Reservations from "./Reservations"
+import  {Reservations} from "./Reservations"
 import Specials from "./Specials"
 import Testimonials from "./Testimonials"
-import {Routes, Route, Link} from "react-router-dom"
-import { useReducer, useState } from "react"
-import ReservationForm from './ReservationForm';
-
+import {Routes, Route, Link, useNavigate} from "react-router-dom"
+import { useEffect } from "react"
+import { submitAPI } from "../BookingsAPI"
+import ReservationForm from "./ReservationForm"
+import ConfirmedBooking from "./ConfirmedBooking"
 
 function Main(){
+
+
     return (
         <main className="main">
             <section className="landing">
@@ -20,6 +22,7 @@ function Main(){
                 <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                 <button><Link to="/reservations">Reserve a table</Link></button>
                 <Routes>
+                    <Route path="/reservations" element={<Reservations/>}/>
                     <Route path="/reservations" element={<Reservations/>}/>
                 </Routes>
             </span>
