@@ -3,6 +3,7 @@ import ReservationForm from './components/ReservationForm';
 import {Reservations} from './components/Reservations';
 import { updateTimesReducer } from './components/Reservations';
 import { types } from "./components/types";
+import { fetchAPI } from './BookingsAPI';
 
 afterEach(cleanup);
 
@@ -15,14 +16,14 @@ test('Renders the Reservations heading', () => {
 describe("updateTimes Reducer", () => {
 
   it("Should return initialTimes", () => {
-      const newState = updateTimesReducer(undefined,{});
-      expect(newState).toEqual(undefined)
+      const newState = updateTimesReducer(fetchAPI(new Date()),{});
+      expect(newState).toEqual(fetchAPI(new Date()))
   })
 
   it("Should return return new State if it receives a type", () => {
-
-    const times = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]
-    const newState = updateTimesReducer(undefined,{type: types.update_times, payload: times});
+    const preSelectedDate = "03/11/2023"
+    const times = fetchAPI(preSelectedDate)
+    const newState = updateTimesReducer(undefined,{type: types.update_times, payload: '03/11/2023'});
     expect(newState).toEqual(times)
 })
 

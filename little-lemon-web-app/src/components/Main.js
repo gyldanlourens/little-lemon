@@ -5,10 +5,6 @@ import  {Reservations} from "./Reservations"
 import Specials from "./Specials"
 import Testimonials from "./Testimonials"
 import {Routes, Route, Link, useNavigate} from "react-router-dom"
-import { useEffect } from "react"
-import { submitAPI } from "../BookingsAPI"
-import ReservationForm from "./ReservationForm"
-import ConfirmedBooking from "./ConfirmedBooking"
 
 function Main(){
 

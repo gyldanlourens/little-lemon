@@ -3,20 +3,8 @@ import ReservationForm from "./ReservationForm";
 import { useReducer, useEffect } from "react";
 import { types } from "./types";
 import { fetchAPI } from "../BookingsAPI";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Routes, Route} from "react-router-dom";
 import { submitAPI } from "../BookingsAPI";
-
-
-
-/*export const updateTimesReducer = (availableTimes, action) => {
-    switch(action.type){
-        case types.update_times:
-            return action.payload;
-        default:
-            return availableTimes
-        }
-}*/
-
 
 export const updateTimesReducer = (availableTimes, action) => {
     switch(action.type){
@@ -31,6 +19,13 @@ export const updateTimesReducer = (availableTimes, action) => {
 export function Reservations() {
 
 
+    const navigate =useNavigate()
+    const submitForm = (formData) => {
+        if (submitAPI(formData) === true){
+            navigate("../bookingsconfirmation")
+        }
+    }
+
     const initialTimes = fetchAPI(new Date())
 
     const [availableTimes, dispatch] = useReducer(updateTimesReducer , initialTimes)
@@ -44,6 +39,7 @@ export function Reservations() {
 
 
     return (
+
     <main>
         <section className="landing">
             <span>
@@ -60,7 +56,7 @@ export function Reservations() {
         </section >
         <section className="reservations">
             <h2>Reserve a table</h2>
-            <ReservationForm availableTimes={availableTimes} handleDateChangeUpdate={handleDateChange} />
+            <ReservationForm availableTimes={availableTimes} handleDateChangeUpdate={handleDateChange} submitForm={submitForm} />
         </section>
     </main>
     )

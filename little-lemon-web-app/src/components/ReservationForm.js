@@ -5,7 +5,7 @@ import {Routes, Route, Link, useNavigate} from "react-router-dom"
 import ConfirmedBooking from "./ConfirmedBooking";
 import { submitAPI } from "../BookingsAPI";
 
-const ReservationForm = ({availableTimes, handleDateChangeUpdate}, props) => {
+const ReservationForm = ({availableTimes, handleDateChangeUpdate, submitForm}) => {
 
     const todaydate = new Date()
     let day = String(todaydate.getDate()).padStart(2,"0")
@@ -33,6 +33,8 @@ const ReservationForm = ({availableTimes, handleDateChangeUpdate}, props) => {
             email: {email},
             section: {selected},
             time: {time}}
+
+        submitForm(formData)
 
 
       }
