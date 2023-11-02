@@ -4,7 +4,7 @@ import marioAndAdrianB from "../images/mario-and-adrian-b.jpg"
 import  {Reservations} from "./Reservations"
 import Specials from "./Specials"
 import Testimonials from "./Testimonials"
-import {Routes, Route, Link, useNavigate} from "react-router-dom"
+import {Routes, Route, Link} from "react-router-dom"
 
 function Main(){
 
@@ -16,7 +16,7 @@ function Main(){
                 <h1>Little Lemon</h1>
                 <h2>Chicago</h2>
                 <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                <button><Link to="/reservations">Reserve a table</Link></button>
+                <button aria-label="Reserve a table"><Link to="/reservations">Reserve a table</Link></button>
                 <Routes>
                     <Route path="/reservations" element={<Reservations/>}/>
                     <Route path="/reservations" element={<Reservations/>}/>

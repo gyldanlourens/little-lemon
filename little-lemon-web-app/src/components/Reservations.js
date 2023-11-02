@@ -1,9 +1,9 @@
 import restaurant from "../images/restaurant.jpg"
 import ReservationForm from "./ReservationForm";
-import { useReducer, useEffect } from "react";
+import { useReducer} from "react";
 import { types } from "./types";
 import { fetchAPI } from "../BookingsAPI";
-import { useNavigate, Routes, Route} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { submitAPI } from "../BookingsAPI";
 
 export const updateTimesReducer = (availableTimes, action) => {

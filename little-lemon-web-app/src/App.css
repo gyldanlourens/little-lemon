@@ -315,7 +315,6 @@ input {
   margin-bottom: 2ch;
   color: #EDEFEE;
   background-color: #495E57;
-  border: none;
   border-radius: 16px;
 }
 
@@ -359,6 +358,11 @@ button {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+button :hover{
+  font-weight: 500;
+}
+
 
 fieldset button {
   margin-left: 1ch;

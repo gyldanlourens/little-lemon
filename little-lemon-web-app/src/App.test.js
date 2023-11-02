@@ -33,3 +33,35 @@ test("User is able to submit the form", () =>{
   const handleSubmit = jest.fn();
   render(<ReservationForm onSubmit={handleSubmit} />);
 })
+
+describe("Test input validation", () => {
+
+  it("Date should be required", () =>{
+    render(<ReservationForm/>)
+    expect(input, {type:"date"}).toHaveAttribute("required")
+  })
+
+  it("Date should be required", () =>{
+    render(<ReservationForm/>)
+    expect(input, {type:"date"}).toHaveAttribute("required")
+  })
+
+  it("Guests should be required and should be > 0", () =>{
+    render(<ReservationForm/>)
+    expect(input, {type:"number"}).toHaveAttribute(required)
+    expect(input, {type:"number"}).toHaveAttribute(min="1")
+  })
+
+  it("Name should be required and should be >= 2", () =>{
+    render(<ReservationForm/>)
+    expect(input, {id:"name"}).toHaveAttribute(required)
+    expect(input, {id:"name"}).toHaveAttribute(minLength="2")
+  })
+
+  it("Email should be required and should be a valid email", () =>{
+    render(<ReservationForm/>)
+    expect(input, {type:"email"}).toHaveAttribute(required)
+  })
+
+  
+})
